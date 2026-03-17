@@ -1,0 +1,43 @@
+﻿  celda.cpp
+  reglasTablero.cpp
+  tablero.cpp
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(23,24): error C2061: error de sintaxis: identificador 'f'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(24,23): error C2061: error de sintaxis: identificador 'f'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(26,17): error C2061: error de sintaxis: identificador 'f'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(27,14): error C2061: error de sintaxis: identificador 'f'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(27,2): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(27,2): warning C4183: 'quita_valor': falta el tipo de valor devuelto; se supone que se trata de una función miembro que devuelve 'int'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(28,2): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(28,2): warning C4183: 'reset': falta el tipo de valor devuelto; se supone que se trata de una función miembro que devuelve 'int'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(29,2): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(29,2): warning C4183: 'autocompletar': falta el tipo de valor devuelto; se supone que se trata de una función miembro que devuelve 'int'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(31,2): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\reglasTablero.h(31,2): warning C4183: 'carga_sudoku': falta el tipo de valor devuelto; se supone que se trata de una función miembro que devuelve 'int'
+  (compilando archivo de origen "reglasTablero.cpp")
+  
+  Generando código...
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\tablero.cpp(13,1): error C4716: 'tTablero::Tablero': debe devolver un valor
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\tablero.cpp(23,1): error C4716: 'tTablero::Tablero': debe devolver un valor
+C:\Users\usuario_local\Downloads\20290219 FP2 HOLA\SUDOKU\celda.cpp(12,1): error C4716: 'tCelda::Celda': debe devolver un valor
