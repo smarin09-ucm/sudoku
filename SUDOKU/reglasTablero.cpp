@@ -18,13 +18,15 @@ tCelda tReglas::dame_celda(int f, int c)
     //return tablero.dame_celda(f, c);
 }
 
+//te dice si has terminado el sudoku o no
 bool tReglas::terminado()
 {
     int dim = tablero.dame_dim();
 
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
-            if (/*tablero.dame_celda(i, j) == VACIA*/) {
+            tCelda celda = tablero.dame_celda(i, j);
+            if (celda.es_vacia()){
                 return false; // Hay al menos una celda vacía
             }
         }
@@ -32,13 +34,16 @@ bool tReglas::terminado()
     return true; // No hay celdas vacías
 }
 
+
+//funcion en proceso
 bool tReglas::bloqueo()
 {
     int dim = tablero.dame_dim();
 
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
-            if (/**/tablero.celda_bloqueada(i, j)) {
+            tCelda celda = tablero.dame_celda(i, j);
+            if (celda.es_ocupada()) {
                 return true; // Hay al menos una celda bloqueada
             }
         }
@@ -46,6 +51,7 @@ bool tReglas::bloqueo()
     return false;
 }
 
+//no se a que se refiere con celda bloqueada
 int tReglas::dame_num_celdas_bloqueadas()
 {
     int contador = 0;
@@ -53,7 +59,8 @@ int tReglas::dame_num_celdas_bloqueadas()
 
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
-            if (tablero.celda_bloqueada(i, j)) {
+            tCelda celda = tablero.dame_celda(i, j);
+            if (celda.es_ocupada()) {
                 contador++;
             }
         }
@@ -68,7 +75,8 @@ int tReglas::dame_num_celdas_vacias()
 
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
-            if (tablero.dame_celda(i, j) == VACIA) {
+            tCelda celda = tablero.dame_celda(i, j);
+            if (celda.es_vacia()) {
                 contador++;
             }
         }
@@ -79,11 +87,12 @@ int tReglas::dame_num_celdas_vacias()
 tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c)
 {
     int contador = 0;
-    int dim = tablero.dame_dimension();
+    int dim = tablero.dame_dim();
 
     for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
-            if (tablero.celda_bloqueada(i, j)) {
+            tCelda celda = tablero.dame_celda(i, j);
+            if (celda.es_ocupada()) {
                 if (contador == p) {
                     f = i;
                     c = j;
@@ -97,7 +106,9 @@ tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c)
     // Si no se encuentra la posición p
     f = -1;
     c = -1;
-    return VACIA;
+    tCelda celda;
+    celda.set_vacia();
+    return celda;
 }
 
 bool tReglas::es_valor_posible(int f, int c, int v)
@@ -105,20 +116,21 @@ bool tReglas::es_valor_posible(int f, int c, int v)
     int dim = tablero.dame_dim();
 
     // Verificar si la celda está bloqueada
-    if (tablero.celda_bloqueada(f, c)) {
+    tCelda celda = tablero.dame_celda(f, c);
+    if (celda.es_ocupada()) {
         return false;
     }
 
     // Verificar fila
     for (int j = 0; j < dim; j++) {
-        if (j != c && tablero.dame_celda(f, j) == v) {
+        if (j != c && celda.dame_valor() == v) {
             return false;
         }
     }
 
     // Verificar columna
     for (int i = 0; i < dim; i++) {
-        if (i != f && tablero.dame_celda(i, c) == v) {
+        if (i != f &&celda.dame_valor() == v) {
             return false;
         }
     }
@@ -130,7 +142,7 @@ bool tReglas::es_valor_posible(int f, int c, int v)
 
         for (int i = inicioFila; i < inicioFila + 3; i++) {
             for (int j = inicioCol; j < inicioCol + 3; j++) {
-                if (i != f && j != c && tablero.dame_celda(i, j) == v) {
+                if (i != f && j != c && celda.dame_valor() == v) {
                     return false;
                 }
             }
@@ -146,7 +158,8 @@ int tReglas::posibles_valores(int f, int c)
     int contador = 0;
 
     // Si la celda está bloqueada o no está vacía, no tiene valores posibles
-    if (tablero.celda_bloqueada(f, c) || tablero.dame_celda(f, c) != VACIA) {
+    tCelda celda = tablero.dame_celda(f, c);
+    if (celda.es_ocupada() || !celda.es_vacia()) {
         return 0;
     }
 
@@ -162,26 +175,30 @@ int tReglas::posibles_valores(int f, int c)
 
 void tReglas::pon_valor(int f, int c, int v)
 {
-    if (!tablero.celda_bloqueada(f, c) && v >= 1 && v <= tablero.dame_dimension()) {
-        tablero.pon_celda(f, c, v);
+    tCelda celda = tablero.dame_celda(f, c);
+
+    if (!celda.es_ocupada() && v >= 1 && v <= tablero.dame_dim()) {
+        tablero.set_valor(f, c, v);
     }
 }
 
 void tReglas::quita_valor(int f, int c)
 {
-    if (!tablero.celda_bloqueada(f, c)) {
-        tablero.pon_celda(f, c, VACIA);
+    tCelda celda;
+    if (!celda.es_ocupada()) {
+        celda.set_vacia();
+        tablero.set_celda(f, c, celda);
     }
 }
 
 void tReglas::reset()
 {
-    tablero = tableroOriginal;
+   // tablero = tableroOriginal;
 }
 
 void tReglas::autocompletar()
 {
-    int dim = tablero.dame_dimension();
+    int dim = tablero.dame_dim();
     bool cambios = true;
 
     while (cambios) {
@@ -190,7 +207,8 @@ void tReglas::autocompletar()
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {
                 // Solo procesar celdas vacías y no bloqueadas
-                if (tablero.dame_celda(i, j) == VACIA && !tablero.celda_bloqueada(i, j)) {
+                tCelda celda = tablero.dame_celda(i, j);
+                if (celda.es_vacia() && !celda.es_ocupada()) {
                     int numPosibles = 0;
                     int valorUnico = -1;
 
@@ -219,8 +237,8 @@ void tReglas::carga_sudoku(ifstream& arch)
     arch >> dim;
 
     // Crear tableros con la dimensión leída
-    tablero = tTablero(dim);
-    tableroOriginal = tTablero(dim);
+    //tablero = tTablero(dim);
+    //tableroOriginal = tTablero(dim);
 
     // Cargar los valores del archivo
     for (int i = 0; i < dim; i++) {
@@ -229,12 +247,12 @@ void tReglas::carga_sudoku(ifstream& arch)
             arch >> valor;
 
             if (valor >= 1 && valor <= dim) {
-                tablero.pon_celda(i, j, valor);
-                tablero.bloquea_celda(i, j, true);
+                //tablero.pon_celda(i, j, valor);
+                //tablero.bloquea_celda(i, j, true);
             }
             else {
-                tablero.pon_celda(i, j, VACIA);
-                tablero.bloquea_celda(i, j, false);
+               // tablero.pon_celda(i, j, VACIA);
+               // tablero.bloquea_celda(i, j, false);
             }
         }
     }

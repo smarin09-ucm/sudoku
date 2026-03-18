@@ -16,7 +16,8 @@ public:
 	tTablero Tablero();
 	tTablero Tablero(int d,tCelda m[MAX][MAX]);
 	int dame_dim();
-	int dame_valor(int f, int c);
+	tCelda dame_celda(int f, int c);
 	void set_celda(int f, int c, tCelda celda);
+	void set_valor(int f, int c, int v);
 };
 

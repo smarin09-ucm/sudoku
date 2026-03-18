@@ -27,8 +27,8 @@ int  tTablero::dame_dim()
 	return dim;
 }
 
-int tTablero::dame_valor(int f, int c) {
-	return mCelda[f][c].dame_valor();
+tCelda tTablero::dame_celda(int f, int c) {
+	return mCelda[f][c];
 }
 
 void tTablero::set_celda(int f, int c, tCelda celda) {
@@ -45,4 +45,9 @@ void tTablero::set_celda(int f, int c, tCelda celda) {
 	if (celda.es_ocupada()) {
 		mCelda[f][c].set_ocupada();
 	}
+}
+
+void tTablero::set_celda(int f, int c, int celda) {
+	mCelda[f][c].set_valor(celda);
+
 }

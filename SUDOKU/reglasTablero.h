@@ -27,11 +27,11 @@ public:
 	int dame_num_celdas_bloqueadas(); // devuelve el número de celdas bloqueadas
 	int dame_num_celdas_vacias(); // devuelve el número de celdas vacías
 	tCelda dame_celda_bloqueada(int p, int& f, int& c); // devuelve en (f,c) la celda bloqueada en la posición p
-	bool es_valor_posible(f, c, v); // true si y sólo si v se puede colocar en (f,c)
-	int posibles_valores(f, c); // devuelve el número de posibles valores para (f,c)
+	bool es_valor_posible(int f, int c, int v); // true si y sólo si v se puede colocar en (f,c)
+	int posibles_valores(int f,int c); // devuelve el número de posibles valores para (f,c)
 	/* modificadoras */
-	void pon_valor(f, c, v); // pone v en (f,c)
-	void quita_valor(f, c); // pone la celda (f,c) a VACIA
+	void pon_valor(int f,int c,int v); // pone v en (f,c)
+	void quita_valor(int f,int c); // pone la celda (f,c) a VACIA
 	void reset(); // recupera el Sudoku original
 	void autocompletar(); // rellena todas las celdas con un único valor posible
 	/* inicializadora */
