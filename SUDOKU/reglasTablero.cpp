@@ -1,5 +1,6 @@
 #include <string>
 #include <fstream>
+#include <iostream>
 
 #include "celda.h"
 #include "tablero.h"
@@ -8,6 +9,14 @@
 
 using namespace std;
 
+
+tTablero tableroOriginal;
+
+tReglas::tReglas() {
+    cont = 0;
+    lista.contBloq = 0;
+}
+
 int tReglas::dame_dimension()
 {
     return tablero.dame_dim();
@@ -15,101 +24,39 @@ int tReglas::dame_dimension()
 
 tCelda tReglas::dame_celda(int f, int c)
 {
-    //return tablero.dame_celda(f, c);
+    return tablero.dame_celda(f, c);
 }
 
 //te dice si has terminado el sudoku o no
-bool tReglas::terminado()
-{
+bool tReglas::terminado() {
     int dim = tablero.dame_dim();
-
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
-            tCelda celda = tablero.dame_celda(i, j);
-            if (celda.es_vacia()){
-                return false; // Hay al menos una celda vacía
-            }
-        }
-    }
-    return true; // No hay celdas vacías
+    return (cont == dim * dim);
 }
-
 
 //funcion en proceso
-bool tReglas::bloqueo()
-{
-    int dim = tablero.dame_dim();
-
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
-            tCelda celda = tablero.dame_celda(i, j);
-            if (celda.es_ocupada()) {
-                return true; // Hay al menos una celda bloqueada
-            }
-        }
-    }
-    return false;
+bool tReglas::bloqueo() {
+    return lista.contBloq > 0;
 }
 
-//no se a que se refiere con celda bloqueada
-int tReglas::dame_num_celdas_bloqueadas()
-{
-    int contador = 0;
-    int dim = tablero.dame_dim();
-
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
-            tCelda celda = tablero.dame_celda(i, j);
-            if (celda.es_ocupada()) {
-                contador++;
-            }
-        }
-    }
-    return contador;
+int tReglas::dame_num_celdas_bloqueadas() {
+    return lista.contBloq;
 }
 
-int tReglas::dame_num_celdas_vacias()
-{
-    int contador = 0;
-    int dim = tablero.dame_dimension();
-
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
-            tCelda celda = tablero.dame_celda(i, j);
-            if (celda.es_vacia()) {
-                contador++;
-            }
-        }
-    }
-    return contador;
+int tReglas::dame_num_celdas_vacias() {
+    int dim = tablero.dame_dim();
+    return dim * dim - cont;
 }
 
-tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c)
-{
-    int contador = 0;
-    int dim = tablero.dame_dim();
-
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
-            tCelda celda = tablero.dame_celda(i, j);
-            if (celda.es_ocupada()) {
-                if (contador == p) {
-                    f = i;
-                    c = j;
-                    return tablero.dame_celda(i, j);
-                }
-                contador++;
-            }
-        }
-    }
-
-    // Si no se encuentra la posición p
-    f = -1;
-    c = -1;
+//POSICION P?? SOLO UN VALOR???
+/*tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c) {
     tCelda celda;
-    celda.set_vacia();
+    if (p >= 0 && p < lista.contBloq) {
+        f = lista.array[p].f;
+        c = lista.array[p].c;
+        celda = tablero.dame_celda(f, c);
+    }
     return celda;
-}
+}*/
 
 bool tReglas::es_valor_posible(int f, int c, int v)
 {
@@ -185,15 +132,16 @@ void tReglas::pon_valor(int f, int c, int v)
 void tReglas::quita_valor(int f, int c)
 {
     tCelda celda;
-    if (!celda.es_ocupada()) {
+    if (celda.es_ocupada()) {
         celda.set_vacia();
+        celda.set_valor = "";
         tablero.set_celda(f, c, celda);
     }
 }
 
 void tReglas::reset()
 {
-   // tablero = tableroOriginal;
+   tablero = tableroOriginal;
 }
 
 void tReglas::autocompletar()
@@ -231,30 +179,32 @@ void tReglas::autocompletar()
     }
 }
 
-void tReglas::carga_sudoku(ifstream& arch)
+void tReglas::carga_sudoku(ifstream& archivo)
 {
     int dim;
-    arch >> dim;
+    archivo >> dim;
 
-    // Crear tableros con la dimensión leída
-    //tablero = tTablero(dim);
-    //tableroOriginal = tTablero(dim);
-
-    // Cargar los valores del archivo
-    for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
-            int valor;
-            arch >> valor;
-
-            if (valor >= 1 && valor <= dim) {
-                //tablero.pon_celda(i, j, valor);
-                //tablero.bloquea_celda(i, j, true);
-            }
-            else {
-               // tablero.pon_celda(i, j, VACIA);
-               // tablero.bloquea_celda(i, j, false);
+    if (archivo.is_open()) { // 2. Verificar apertura
+        // Cargar los valores del archivo
+        for (int i = 0; i < dim; i++) {
+            for (int j = 0; j < dim; j++) {
+                int valor;
+                archivo >> valor;
+                tCelda celda;
+                if (valor >= 1 && valor <= dim) {
+                    celda.set_valor(valor);
+                    celda.set_ocupada();
+                    tablero.set_celda(i, j, celda);
+                }
+                else {
+                    celda.set_vacia();
+                }
             }
         }
+        archivo.close(); // 4. Cerrar archivo
+    }
+    else {
+        cout << "Error al abrir el archivo";
     }
 
     // Guardar una copia del tablero original

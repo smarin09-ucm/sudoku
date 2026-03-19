@@ -8,7 +8,8 @@ using namespace std;
 
 tCelda tCelda::Celda() 
 {
-
+	valor = 0;
+	estado = VACIA;
 }
 
 bool tCelda::es_vacia()

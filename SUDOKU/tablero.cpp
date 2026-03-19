@@ -8,15 +8,19 @@
 using namespace std;
 
 //	Constructora por defecto
-tTablero tTablero::Tablero() {
-	dim = 9;
+tTablero::tTablero() {
+	dim = MAX_DIM;
 }
 
 //	Constructora con parametros
-tTablero tTablero::Tablero(int d, tCelda m[MAX][MAX]) {
-	dim = d;
-	for (int i = 0; i < MAX; ++i) {
-		for (int j = 0; j < MAX; ++j) {
+tTablero::tTablero(int d, tCelda m[MAX_DIM][MAX_DIM]) {
+	if (d > 0 && d < MAX_DIM) {
+		dim = d;
+	}
+	else dim = MAX_DIM;
+
+	for (int i = 0; i < dim; ++i) {
+		for (int j = 0; j < dim; ++j) {
 			mCelda[i][j] = m[i][j];
 		}
 	}

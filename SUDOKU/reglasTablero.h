@@ -10,7 +10,7 @@ using namespace std;
 
 struct tListaBLoq {
 	int contBloq;
-	tCelda array[MAX][MAX];
+	tCelda array[MAX_DIM][MAX_DIM];
 };
 
 class tReglas {
@@ -20,6 +20,7 @@ private:
 	tListaBLoq lista;
 public:
 	/* consultoras */
+	tReglas();
 	int dame_dimension(); // devuelve la dimensión del tablero
 	tCelda dame_celda(int f, int c); // devuelve la celda en la posición (f,c)
 	bool terminado(); // true si y sólo si el Sudoku está resuelto

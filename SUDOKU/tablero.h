@@ -6,18 +6,18 @@
 #include "celda.h"
 
 using namespace std;
-const int MAX = 9;
+const int MAX_DIM = 9;
 
 class tTablero {
 private:
 	int dim;
-	tCelda mCelda[MAX][MAX];
+	tCelda mCelda[MAX_DIM][MAX_DIM];
 public:
-	tTablero Tablero();
-	tTablero Tablero(int d,tCelda m[MAX][MAX]);
+	tTablero();
+	tTablero(int d,tCelda m[MAX_DIM][MAX_DIM]);
 	int dame_dim();
 	tCelda dame_celda(int f, int c);
-	void set_celda(int f, int c, tCelda celda);
+	void set_celda(int f, int c, int celda);
 	void set_valor(int f, int c, int v);
 };
 

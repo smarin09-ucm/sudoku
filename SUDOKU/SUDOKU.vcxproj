@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="celda.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="reglasTablero.cpp" />
     <ClCompile Include="tablero.cpp" />
   </ItemGroup>
