@@ -1,12 +1,8 @@
-
-#include <string>
-#include <fstream>
-
 #include "celda.h"
 
 using namespace std;
 
-tCelda tCelda::Celda() 
+tCelda::tCelda() 
 {
 	valor = 0;
 	estado = VACIA;

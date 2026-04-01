@@ -1,10 +1,5 @@
 #pragma once
 
-#include <string>
-#include <fstream>
-
-using namespace std;
-
 enum tEstado { ORIGINAL, OCUPADA, VACIA };
 
 class tCelda {
@@ -12,7 +7,7 @@ class tCelda {
 	   int valor;
 	   tEstado estado;
    public:
-	tCelda Celda();
+	tCelda();
 	/* métodos de consulta */
 	bool es_vacia(); // devuelve true si y sólo si la celda es VACIA
 	bool es_original(); // devuelve true si y sólo si la celda es ORIGINAL

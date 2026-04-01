@@ -1,16 +1,6 @@
-#include <string>
-#include <fstream>
-#include <iostream>
-
-#include "celda.h"
-#include "tablero.h"
 #include "reglasTablero.h"
 
-
 using namespace std;
-
-
-tTablero tableroOriginal;
 
 tReglas::tReglas() {
     cont = 0;
@@ -30,7 +20,7 @@ tCelda tReglas::dame_celda(int f, int c)
 //te dice si has terminado el sudoku o no
 bool tReglas::terminado() {
     int dim = tablero.dame_dim();
-    return (cont == dim * dim);
+    return (cont == dim * dim) && !bloqueo();
 }
 
 //funcion en proceso
@@ -47,51 +37,54 @@ int tReglas::dame_num_celdas_vacias() {
     return dim * dim - cont;
 }
 
-//POSICION P?? SOLO UN VALOR???
-/*tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c) {
-    tCelda celda;
+tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c) const {
     if (p >= 0 && p < lista.contBloq) {
-        f = lista.array[p].f;
-        c = lista.array[p].c;
-        celda = tablero.dame_celda(f, c);
+        f = lista.lista[p].f;
+        c = lista.lista[p].c;
     }
-    return celda;
-}*/
+    return tablero.dame_celda(f, c);
+}
 
 bool tReglas::es_valor_posible(int f, int c, int v)
 {
     int dim = tablero.dame_dim();
 
-    // Verificar si la celda está bloqueada
+    if (f < 0 || f >= dim || c < 0 || c >= dim)
+        return false;
+
     tCelda celda = tablero.dame_celda(f, c);
-    if (celda.es_ocupada()) {
+
+    // Verificar si la celda ya tiene un numero
+    if (!celda.es_vacia()) {
         return false;
     }
 
     // Verificar fila
     for (int j = 0; j < dim; j++) {
-        if (j != c && celda.dame_valor() == v) {
+        if (tablero.dame_celda(f, j).dame_valor() == v) {
             return false;
         }
     }
 
     // Verificar columna
     for (int i = 0; i < dim; i++) {
-        if (i != f &&celda.dame_valor() == v) {
+        if (tablero.dame_celda(i, c).dame_valor() == v) {
             return false;
         }
     }
 
-    // Verificar región 3x3 (para Sudoku estándar de 9x9)
-    if (dim == 9) {
-        int inicioFila = (f / 3) * 3;
-        int inicioCol = (c / 3) * 3;
+    // Verificar regiones
+    int n = 1;
+    while (n * n < dim) {
+        n++;
+    }
+    int inicioF = (f / n) * n;
+    int inicioC = (c / n) * n;
 
-        for (int i = inicioFila; i < inicioFila + 3; i++) {
-            for (int j = inicioCol; j < inicioCol + 3; j++) {
-                if (i != f && j != c && celda.dame_valor() == v) {
-                    return false;
-                }
+    for (int i = inicioF; i < inicioF + n; i++) {
+        for (int j = inicioC; j < inicioC + n; j++) {
+            if (tablero.dame_celda(i, j).dame_valor() == v) {
+                return false;
             }
         }
     }
@@ -106,7 +99,7 @@ int tReglas::posibles_valores(int f, int c)
 
     // Si la celda está bloqueada o no está vacía, no tiene valores posibles
     tCelda celda = tablero.dame_celda(f, c);
-    if (celda.es_ocupada() || !celda.es_vacia()) {
+    if (!celda.es_vacia()) {
         return 0;
     }
 
@@ -122,26 +115,57 @@ int tReglas::posibles_valores(int f, int c)
 
 void tReglas::pon_valor(int f, int c, int v)
 {
-    tCelda celda = tablero.dame_celda(f, c);
-
-    if (!celda.es_ocupada() && v >= 1 && v <= tablero.dame_dim()) {
-        tablero.set_valor(f, c, v);
+    if (es_valor_posible(f, c, v)) {
+        tCelda celda = tablero.dame_celda(f, c);
+        celda.set_valor(v);
+        celda.set_ocupada();
+        tablero.set_celda(f, c, celda);
+        cont++;
+        actualiza_bloqueos();
     }
 }
 
 void tReglas::quita_valor(int f, int c)
 {
-    tCelda celda;
-    if (celda.es_ocupada()) {
+    tCelda celda = tablero.dame_celda(f, c);
+
+    if (celda.es_ocupada() && !celda.es_original()) {
         celda.set_vacia();
-        celda.set_valor = "";
+        celda.set_valor(0);
         tablero.set_celda(f, c, celda);
+        cont--;
+        actualiza_bloqueos();
+    }
+}
+
+void tReglas::actualiza_bloqueos() {
+    lista.contBloq = 0;
+    int dim = tablero.dame_dim();
+    for (int i = 0; i < dim; ++i) {
+        for (int j = 0; j < dim; ++j) {
+            if (tablero.dame_celda(i, j).es_vacia() && posibles_valores(i, j) == 0) {
+                lista.lista[lista.contBloq].f = i;
+                lista.lista[lista.contBloq].c = j;
+                lista.contBloq++;
+            }
+        }
     }
 }
 
 void tReglas::reset()
 {
    tablero = tableroOriginal;
+   cont = 0;
+   int dim = tablero.dame_dim();
+
+   for (int i = 0; i < dim; i++) {
+       for (int j = 0; j < dim; j++) {
+           if (tablero.dame_celda(i, j).es_original()) {
+               cont++;
+           }
+       }
+   }
+   actualiza_bloqueos();
 }
 
 void tReglas::autocompletar()
@@ -154,9 +178,8 @@ void tReglas::autocompletar()
 
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {
-                // Solo procesar celdas vacías y no bloqueadas
-                tCelda celda = tablero.dame_celda(i, j);
-                if (celda.es_vacia() && !celda.es_ocupada()) {
+                // Solo procesar celdas vacías
+                if (tablero.dame_celda(i, j).es_vacia()) {
                     int numPosibles = 0;
                     int valorUnico = -1;
 
@@ -183,30 +206,31 @@ void tReglas::carga_sudoku(ifstream& archivo)
 {
     int dim;
     archivo >> dim;
+    tablero = tTablero(d);
+    cont = 0;
+    tCelda celda;
+  
 
-    if (archivo.is_open()) { // 2. Verificar apertura
-        // Cargar los valores del archivo
-        for (int i = 0; i < dim; i++) {
-            for (int j = 0; j < dim; j++) {
-                int valor;
-                archivo >> valor;
-                tCelda celda;
-                if (valor >= 1 && valor <= dim) {
-                    celda.set_valor(valor);
-                    celda.set_ocupada();
-                    tablero.set_celda(i, j, celda);
-                }
-                else {
-                    celda.set_vacia();
-                }
+    for (int i = 0; i < dim; i++) {
+        for (int j = 0; j < dim; j++) {
+            int valor;
+            archivo >> valor;
+
+            if (valor == 0) {
+                celda.set_valor(0);
+                celda.set_vacia();
             }
+            else {
+                celda.set_valor(valor);
+                celda.set_original();
+                cont++; 
+            }
+
+            tablero.set_celda(i, j, celda);
         }
-        archivo.close(); // 4. Cerrar archivo
-    }
-    else {
-        cout << "Error al abrir el archivo";
     }
 
     // Guardar una copia del tablero original
     tableroOriginal = tablero;
+    actualiza_bloqueos();
 }

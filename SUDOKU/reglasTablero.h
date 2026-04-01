@@ -6,21 +6,28 @@
 #include "celda.h"
 #include "tablero.h"
 
-using namespace std;
+struct tPos {
+	int f;
+	int c;
+};
 
 struct tListaBLoq {
 	int contBloq;
-	tCelda array[MAX_DIM][MAX_DIM];
+	tPos lista[MAX_DIM * MAX_DIM];
 };
 
 class tReglas {
 private:
 	tTablero tablero;
-	int cont;
+	tTablero tableroOriginal; //hay que ponerlo como atributo privado
+	int cont; //numero de celdas ocupadas
 	tListaBLoq lista;
+
+	void actualiza_bloqueos(); //para mantener la lista de bloqueos actualizada
 public:
-	/* consultoras */
+	/*constructora*/
 	tReglas();
+	/* consultoras */
 	int dame_dimension(); // devuelve la dimensión del tablero
 	tCelda dame_celda(int f, int c); // devuelve la celda en la posición (f,c)
 	bool terminado(); // true si y sólo si el Sudoku está resuelto
