@@ -1,47 +1,61 @@
 #pragma once
-
 #include <string>
 #include <fstream>
-
+#include <iostream>
 #include "celda.h"
 #include "tablero.h"
 
 struct tPos {
-	int f;
-	int c;
+    int f;
+    int c;
 };
 
 struct tListaBLoq {
-	int contBloq;
-	tPos lista[MAX_DIM * MAX_DIM];
+    int contBloq;
+    tPos lista[MAX_DIM * MAX_DIM];
+};
+
+struct tValor {
+    bool posible;
+    int celdas_que_afectan;
+};
+
+struct tValores {
+    int nFilas;
+    int nColumnas;
+    tValor valores[MAX_DIM][MAX_DIM][MAX_DIM];
 };
 
 class tReglas {
 private:
-	tTablero tablero;
-	tTablero tableroOriginal; //hay que ponerlo como atributo privado
-	int cont; //numero de celdas ocupadas
-	tListaBLoq lista;
+    tTablero tablero;
+    tTablero tableroOriginal;
+    int cont;
+    tListaBLoq lista;
+    void actualiza_bloqueos();
+    tValores valores_celda;
+    void inicializa_valores();
 
-	void actualiza_bloqueos(); //para mantener la lista de bloqueos actualizada
+    //actualiza los valores una vez escogidos
+    void actualiza_valores_pon(int f, int c, int v);
+    void actualiza_valores_quita(int f, int c, int v);
 public:
-	/*constructora*/
-	tReglas();
-	/* consultoras */
-	int dame_dimension(); // devuelve la dimensión del tablero
-	tCelda dame_celda(int f, int c); // devuelve la celda en la posición (f,c)
-	bool terminado(); // true si y sólo si el Sudoku está resuelto
-	bool bloqueo(); // true si el Sudoku tiene celdas bloqueadas
-	int dame_num_celdas_bloqueadas(); // devuelve el número de celdas bloqueadas
-	int dame_num_celdas_vacias(); // devuelve el número de celdas vacías
-	tCelda dame_celda_bloqueada(int p, int& f, int& c); // devuelve en (f,c) la celda bloqueada en la posición p
-	bool es_valor_posible(int f, int c, int v); // true si y sólo si v se puede colocar en (f,c)
-	int posibles_valores(int f,int c); // devuelve el número de posibles valores para (f,c)
-	/* modificadoras */
-	void pon_valor(int f,int c,int v); // pone v en (f,c)
-	void quita_valor(int f,int c); // pone la celda (f,c) a VACIA
-	void reset(); // recupera el Sudoku original
-	void autocompletar(); // rellena todas las celdas con un único valor posible
-	/* inicializadora */
-	void carga_sudoku(ifstream& arch); // carga un Sudoku original de un archivo
+    tReglas();
+    int dame_dimension();
+    tCelda dame_celda(int f, int c);
+    bool terminado();
+    bool bloqueo();
+    int dame_num_celdas_bloqueadas();
+    int dame_num_celdas_vacias();
+    tCelda dame_celda_bloqueada(int p, int& f, int& c);
+    bool es_valor_posible(int f, int c, int v);
+    int posibles_valores(int f, int c);
+    void pon_valor(int f, int c, int v);
+    void quita_valor(int f, int c);
+    void reset();
+    void autocompletar();
+    void carga_sudoku(std::ifstream& arch); 
+    //usa el struct tValores
+    void dame_valores_posibles(int f, int c, int lista[], int& n);
+
 };

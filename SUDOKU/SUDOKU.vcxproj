@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="celda.h" />
+    <ClInclude Include="colors.h" />
     <ClInclude Include="reglasTablero.h" />
     <ClInclude Include="tablero.h" />
   </ItemGroup>
