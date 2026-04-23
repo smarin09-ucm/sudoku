@@ -147,10 +147,15 @@ int main()
             else 
             {
                 int vals[MAX_DIM];
-                int n = 0;
-                juego.dame_valores_posibles(f - 1, c - 1, vals, n);
+                int cont = 0;
+                int n = juego.posibles_valores(f,c);
                 cout << "Los valores posibles para la celda son: { ";
-                for (int i = 0; i < n; i++) cout << vals[i] << " ";
+                for (int i = 0; i < 10 && cont < n; i++) {
+                    if (juego.es_valor_posible(f-1, c-1, i)) {
+                        cout << i << " ";
+                        cont++;
+                    }
+                }
                 cout << "}\n";
             }
             break;

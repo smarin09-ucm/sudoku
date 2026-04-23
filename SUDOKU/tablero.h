@@ -11,8 +11,8 @@ private:
 public:
 	tTablero();
 	tTablero(int d);
-	int dame_dim();
-	tCelda& dame_celda(int f, int c);
+	const int dame_dim();
+	tCelda dame_celda(int f, int c);
 	void set_celda(int f, int c, const tCelda& celda);
 };
 

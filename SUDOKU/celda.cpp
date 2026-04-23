@@ -8,25 +8,25 @@ tCelda::tCelda()
 	estado = VACIA;
 }
 
-bool tCelda::es_vacia()
+const bool tCelda::es_vacia()
 {
 	if (estado == VACIA)return true;
 	return false;
 }
 
-bool  tCelda::es_original()
+const bool  tCelda::es_original()
 {
 	if (estado == ORIGINAL)return true;
 	return false;
 }
 
-bool  tCelda::es_ocupada()
+const bool  tCelda::es_ocupada()
 {
 	if (estado == OCUPADA)return true;
 	return false;
 }
 
-int  tCelda::dame_valor() 
+const int  tCelda::dame_valor()
 {
 	return valor;
 }

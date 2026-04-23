@@ -15,12 +15,12 @@ tTablero::tTablero(int d) {
 	else dim = MAX_DIM;
 }
 
-int  tTablero::dame_dim() 
+const int  tTablero::dame_dim()
 {
 	return dim;
 }
 
-tCelda& tTablero:: dame_celda(int f, int c) {
+tCelda tTablero:: dame_celda(int f, int c) {
 	return mCelda[f][c];
 }
 

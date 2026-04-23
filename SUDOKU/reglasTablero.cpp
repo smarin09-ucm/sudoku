@@ -10,45 +10,45 @@ tReglas::tReglas()
 }
 
 //devuelve la dimension
-int tReglas::dame_dimension() 
+const int tReglas::dame_dimension()
 {
     return tablero.dame_dim();
 }
 
 //devuelve la celda
-tCelda tReglas::dame_celda(int f, int c) 
+tCelda tReglas::dame_celda(int f, int c)
 {
     return tablero.dame_celda(f, c);
 }
 
 //devuelve true si esta terminado
-bool tReglas::terminado() 
+const bool tReglas::terminado()
 {
     int dim = tablero.dame_dim();
     return (cont == dim * dim) && !bloqueo();
 }
 
 //devuelve true si hay algún bloqueo
-bool tReglas::bloqueo() 
+const bool tReglas::bloqueo()
 {
     return lista.contBloq > 0;
 }
 
 //devuelve el nuemro de celdas bloqueadas
-int tReglas::dame_num_celdas_bloqueadas() 
+const int tReglas::dame_num_celdas_bloqueadas()
 {
     return lista.contBloq;
 }
 
 //devuelve el numero de celdas vacias
-int tReglas::dame_num_celdas_vacias() 
+const int tReglas::dame_num_celdas_vacias()
 {
     int dim = tablero.dame_dim();
     return dim * dim - cont;
 }
 
 //devuelve la celda bloqueada
-tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c) 
+const tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c)
 {
     if (p >= 0 && p < lista.contBloq) 
     {
@@ -59,7 +59,7 @@ tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c)
 }
 
 //devuelve true si el valor se puede colocar
-bool tReglas::es_valor_posible(int f, int c, int v) 
+const bool tReglas::es_valor_posible(int f, int c, int v)
 {
     int dim = tablero.dame_dim();
 
@@ -71,7 +71,7 @@ bool tReglas::es_valor_posible(int f, int c, int v)
 }
 
 //devuelve el numero de posibles valores
-int tReglas::posibles_valores(int f, int c) 
+const int tReglas::posibles_valores(int f, int c)
 {
     int dim = tablero.dame_dim();
 
@@ -86,20 +86,8 @@ int tReglas::posibles_valores(int f, int c)
     return cnt;
 }
 
-//devuelve la lista real de valores posibles para mostrar al usuario
-void tReglas::dame_valores_posibles(int f, int c, int vals[], int& n) {
-    int dim = tablero.dame_dim();
-    n = 0;
-    if (!tablero.dame_celda(f, c).es_vacia()) return;
-    for (int v = 0; v < dim; v++) {
-        if (valores_celda.valores[f][c][v].posible) {
-            vals[n++] = v + 1;
-        }
-    }
-}
-
 //inicializa todos los valores
-void tReglas::inicializa_valores() 
+void tReglas::inicializa_valores()
 {
     int dim = tablero.dame_dim();
     valores_celda.nFilas = dim;
@@ -293,19 +281,16 @@ void tReglas::actualiza_bloqueos()
 
 void tReglas::reset() 
 {
-    tablero = tableroOriginal;
-    cont = 0;
-
     int dim = tablero.dame_dim();
     for (int i = 0; i < dim; i++) 
     {
         for (int j = 0; j < dim; j++) 
         {
-            if (tablero.dame_celda(i, j).es_original())cont++;
+            tCelda celda = tablero.dame_celda(i, j);
+            if (celda.es_ocupada() && !celda.es_original())
+                quita_valor(i, j);
         }
     }
-    inicializa_valores();
-    actualiza_bloqueos();
 }
 
 void tReglas::autocompletar()
@@ -373,4 +358,59 @@ void tReglas::carga_sudoku(ifstream& archivo)
     tableroOriginal = tablero;
     inicializa_valores();  // inicializa la 3D
     actualiza_bloqueos();
+}
+
+void tReglas::actualiza_valores(int f, int c, int v, bool poniendo)
+{
+    int dim = tablero.dame_dim();
+    int idx = v - 1;
+
+    int n = 1;
+    while (n * n < dim) n++;
+    int iF = (f / n) * n;
+    int iC = (c / n) * n;
+
+    // La propia celda: todos sus valores se ven afectados
+    for (int k = 0; k < dim; k++)
+    {
+        if (poniendo)
+        {
+            valores_celda.valores[f][c][k].posible = false;
+            valores_celda.valores[f][c][k].celdas_que_afectan++;
+        }
+        else
+        {
+            valores_celda.valores[f][c][k].celdas_que_afectan--;
+            if (valores_celda.valores[f][c][k].celdas_que_afectan == 0)
+                valores_celda.valores[f][c][k].posible = true;
+        }
+    }
+
+    // Fila, columna y submatriz: solo el valor v se ve afectado
+    auto actualiza_celda = [&](int i, int j)
+        {
+            if (i == f && j == c) return;
+            if (poniendo)
+            {
+                if (valores_celda.valores[i][j][idx].posible)
+                {
+                    valores_celda.valores[i][j][idx].posible = false;
+                    valores_celda.valores[i][j][idx].celdas_que_afectan = 1;
+                }
+                else
+                    valores_celda.valores[i][j][idx].celdas_que_afectan++;
+            }
+            else
+            {
+                valores_celda.valores[i][j][idx].celdas_que_afectan--;
+                if (valores_celda.valores[i][j][idx].celdas_que_afectan == 0)
+                    valores_celda.valores[i][j][idx].posible = true;
+            }
+        };
+
+    for (int j = 0; j < dim; j++) actualiza_celda(f, j);  // fila
+    for (int i = 0; i < dim; i++) actualiza_celda(i, c);  // columna
+    for (int i = iF; i < iF + n; i++)                     // submatriz
+        for (int j = iC; j < iC + n; j++)
+            actualiza_celda(i, j);
 }
