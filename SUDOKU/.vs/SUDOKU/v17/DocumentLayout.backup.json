@@ -38,8 +38,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "reglasTablero.cpp",
+              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp",
+              "RelativeDocumentMoniker": "reglasTablero.cpp",
+              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp",
+              "RelativeToolTip": "reglasTablero.cpp",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAUwKAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-23T11:14:04.026Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -50,8 +67,7 @@
               "RelativeToolTip": "tablero.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T11:17:12.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T11:17:12.644Z"
             },
             {
               "$type": "Document",
@@ -61,14 +77,10 @@
               "RelativeDocumentMoniker": "tablero.cpp",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.cpp",
               "RelativeToolTip": "tablero.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-23T11:14:07.798Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -78,7 +90,7 @@
               "RelativeDocumentMoniker": "reglasTablero.h",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.h",
               "RelativeToolTip": "reglasTablero.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAuwCoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAtwC4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-23T11:15:58.456Z",
               "EditorCaption": ""
@@ -91,22 +103,9 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAewJsAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAtwHYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-23T11:14:10.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "reglasTablero.cpp",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp",
-              "RelativeDocumentMoniker": "reglasTablero.cpp",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp",
-              "RelativeToolTip": "reglasTablero.cpp",
-              "ViewState": "AgIAAHIBAAAAAAAAAAAuwJ8BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-23T11:14:04.026Z",
               "EditorCaption": ""
             },
             {
@@ -119,8 +118,7 @@
               "RelativeToolTip": "celda.h",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T11:16:41.875Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T11:16:41.875Z"
             },
             {
               "$type": "Document",
@@ -132,8 +130,7 @@
               "RelativeToolTip": "celda.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-19T11:34:24.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-19T11:34:24.816Z"
             },
             {
               "$type": "Bookmark",

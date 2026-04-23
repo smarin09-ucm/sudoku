@@ -109,139 +109,18 @@ void tReglas::inicializa_valores()
             tCelda cel = tablero.dame_celda(i, j);
             if (!cel.es_vacia()) 
             {
-                actualiza_valores_pon(i, j, cel.dame_valor());
+                actualiza_valores(i, j, cel.dame_valor(), true);
             }
         }
 }
-
-//cuando se pone v en (f,c) marca como no posible en fila y col
-void tReglas::actualiza_valores_pon(int f, int c, int v) {
-    int dim = tablero.dame_dim();
-    int idx = v - 1;
-
-    //en al propia celda ningún valor es posible
-    for (int k = 0; k < dim; k++)
-    {
-        valores_celda.valores[f][c][k].posible = false;
-        valores_celda.valores[f][c][k].celdas_que_afectan++;
-    }
-
-    int n = 1;
-    while (n * n < dim) n++;
-    int iF = (f / n) * n;
-    int iC = (c / n) * n;
-
-    // para la fila
-    for (int j = 0; j < dim; j++) 
-    {
-        if (j != c && valores_celda.valores[f][j][idx].posible) 
-        {
-            valores_celda.valores[f][j][idx].posible = false;
-            valores_celda.valores[f][j][idx].celdas_que_afectan = 1;
-        }
-        else if (j != c && !valores_celda.valores[f][j][idx].posible) 
-        {
-            valores_celda.valores[f][j][idx].celdas_que_afectan++;
-        }
-    }
-    //para la columna
-    for (int i = 0; i < dim; i++) 
-    {
-        if (i != f && valores_celda.valores[i][c][idx].posible) 
-        {
-            valores_celda.valores[i][c][idx].posible = false;
-            valores_celda.valores[i][c][idx].celdas_que_afectan = 1;
-        }
-        else if (i != f && !valores_celda.valores[i][c][idx].posible) 
-        {
-            valores_celda.valores[i][c][idx].celdas_que_afectan++;
-        }
-    }
-    //submatriz
-    for (int i = iF; i < iF + n; i++) 
-    {
-        for (int j = iC; j < iC + n; j++) 
-        {
-            if (i != f || j != c) {
-                if (valores_celda.valores[i][j][idx].posible) 
-                {
-                    valores_celda.valores[i][j][idx].posible = false;
-                    valores_celda.valores[i][j][idx].celdas_que_afectan = 1;
-                }
-                else 
-                {
-                    valores_celda.valores[i][j][idx].celdas_que_afectan++;
-                }
-            }
-        }
-    }
-}
-
-//cuando se quita v restaura los posibilidades
-void tReglas::actualiza_valores_quita(int f, int c, int v) 
-{
-    int dim = tablero.dame_dim();
-    int idx = v - 1;
-
-    //la propia celda vuelve a estar disponible
-    for (int k = 0; k < dim; k++) 
-    {
-        valores_celda.valores[f][c][k].celdas_que_afectan--;
-        if (valores_celda.valores[f][c][k].celdas_que_afectan == 0) valores_celda.valores[f][c][k].posible = true;
-    }
-
-    int n = 1;
-    while (n * n < dim) n++;
-    int iF = (f / n) * n;
-    int iC = (c / n) * n;
-
-    //para la fila
-    for (int j = 0; j < dim; j++) 
-    {
-        if (j != c) 
-        {
-            valores_celda.valores[f][j][idx].celdas_que_afectan--;
-            if (valores_celda.valores[f][j][idx].celdas_que_afectan == 0)
-                valores_celda.valores[f][j][idx].posible = true;
-        }
-    }
-    //para columna
-    for (int i = 0; i < dim; i++) 
-    {
-        if (i != f) 
-        {
-            valores_celda.valores[i][c][idx].celdas_que_afectan--;
-            if (valores_celda.valores[i][c][idx].celdas_que_afectan == 0) valores_celda.valores[i][c][idx].posible = true;
-        }
-    }
-    //submatriz
-    for (int i = iF; i < iF + n; i++) 
-    {
-        for (int j = iC; j < iC + n; j++) 
-        {
-            if (i != f || j != c) 
-            {
-                valores_celda.valores[i][j][idx].celdas_que_afectan--;
-                if (valores_celda.valores[i][j][idx].celdas_que_afectan == 0) valores_celda.valores[i][j][idx].posible = true;
-            }
-        }
-    }
-}
-
-void tReglas::pon_valor(int f, int c, int v) 
-{
-    if (es_valor_posible(f, c, v)) 
-    {
-        tCelda celda = tablero.dame_celda(f, c);
-        celda.set_valor(v);
-        celda.set_ocupada();
-
-        tablero.set_celda(f, c, celda);
-        cont++;
-
-        actualiza_valores_pon(f, c, v);
+void tReglas::pon_valor(int f, int c, int v) {
+    if (es_valor_posible(f, c, v)) { 
+        tCelda celda = tablero.dame_celda(f, c); 
+        celda.set_valor(v); celda.set_ocupada(); 
+        tablero.set_celda(f, c, celda); cont++; 
+        actualiza_valores(f, c, v, true);
         actualiza_bloqueos();
-    }
+    } 
 }
 
 void tReglas::quita_valor(int f, int c) 
@@ -256,7 +135,7 @@ void tReglas::quita_valor(int f, int c)
         tablero.set_celda(f, c, celda);
         cont--;
 
-        actualiza_valores_quita(f, c, v);
+        actualiza_valores(f, c, v, false);
         actualiza_bloqueos();
     }
 }
@@ -359,58 +238,70 @@ void tReglas::carga_sudoku(ifstream& archivo)
     inicializa_valores();  // inicializa la 3D
     actualiza_bloqueos();
 }
-
 void tReglas::actualiza_valores(int f, int c, int v, bool poniendo)
 {
     int dim = tablero.dame_dim();
     int idx = v - 1;
+    int delta = poniendo ? 1 : -1;
+
+    // La propia celda: ningún valor posible mientras esté ocupada
+    for (int k = 0; k < dim; k++)
+    {
+        valores_celda.valores[f][c][k].celdas_que_afectan += delta;
+
+        if (valores_celda.valores[f][c][k].celdas_que_afectan > 0)
+            valores_celda.valores[f][c][k].posible = false;
+        else
+            valores_celda.valores[f][c][k].posible = true;
+    }
 
     int n = 1;
     while (n * n < dim) n++;
     int iF = (f / n) * n;
     int iC = (c / n) * n;
 
-    // La propia celda: todos sus valores se ven afectados
-    for (int k = 0; k < dim; k++)
+    // fila
+    for (int j = 0; j < dim; j++)
     {
-        if (poniendo)
+        if (j != c)
         {
-            valores_celda.valores[f][c][k].posible = false;
-            valores_celda.valores[f][c][k].celdas_que_afectan++;
-        }
-        else
-        {
-            valores_celda.valores[f][c][k].celdas_que_afectan--;
-            if (valores_celda.valores[f][c][k].celdas_que_afectan == 0)
-                valores_celda.valores[f][c][k].posible = true;
+            valores_celda.valores[f][j][idx].celdas_que_afectan += delta;
+
+            if (valores_celda.valores[f][j][idx].celdas_que_afectan > 0)
+                valores_celda.valores[f][j][idx].posible = false;
+            else
+                valores_celda.valores[f][j][idx].posible = true;
         }
     }
 
-    // Fila, columna y submatriz: solo el valor v se ve afectado
-    auto actualiza_celda = [&](int i, int j)
+    // columna
+    for (int i = 0; i < dim; i++)
+    {
+        if (i != f)
         {
-            if (i == f && j == c) return;
-            if (poniendo)
-            {
-                if (valores_celda.valores[i][j][idx].posible)
-                {
-                    valores_celda.valores[i][j][idx].posible = false;
-                    valores_celda.valores[i][j][idx].celdas_que_afectan = 1;
-                }
-                else
-                    valores_celda.valores[i][j][idx].celdas_que_afectan++;
-            }
+            valores_celda.valores[i][c][idx].celdas_que_afectan += delta;
+
+            if (valores_celda.valores[i][c][idx].celdas_que_afectan > 0)
+                valores_celda.valores[i][c][idx].posible = false;
             else
+                valores_celda.valores[i][c][idx].posible = true;
+        }
+    }
+
+    // submatriz
+    for (int i = iF; i < iF + n; i++)
+    {
+        for (int j = iC; j < iC + n; j++)
+        {
+            if (i != f || j != c)
             {
-                valores_celda.valores[i][j][idx].celdas_que_afectan--;
-                if (valores_celda.valores[i][j][idx].celdas_que_afectan == 0)
+                valores_celda.valores[i][j][idx].celdas_que_afectan += delta;
+
+                if (valores_celda.valores[i][j][idx].celdas_que_afectan > 0)
+                    valores_celda.valores[i][j][idx].posible = false;
+                else
                     valores_celda.valores[i][j][idx].posible = true;
             }
-        };
-
-    for (int j = 0; j < dim; j++) actualiza_celda(f, j);  // fila
-    for (int i = 0; i < dim; i++) actualiza_celda(i, c);  // columna
-    for (int i = iF; i < iF + n; i++)                     // submatriz
-        for (int j = iC; j < iC + n; j++)
-            actualiza_celda(i, j);
+        }
+    }
 }

@@ -1,5 +1,2 @@
-﻿  main.cpp
-C:\Users\sarma\Desktop\ecosistema  final\sudoku\SUDOKU\main.cpp(149,21): warning C4101: 'vals': variable local sin referencia
-  reglasTablero.cpp
-  Generando código...
+﻿  reglasTablero.cpp
   SUDOKU.vcxproj -> C:\Users\sarma\Desktop\ecosistema  final\sudoku\SUDOKU\x64\Debug\SUDOKU.exe
