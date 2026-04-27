@@ -124,13 +124,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="celda.cpp" />
+    <ClCompile Include="ListaSudokus.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="reglasTablero.cpp" />
     <ClCompile Include="tablero.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="celda.h" />
+    <ClInclude Include="checkML.h" />
     <ClInclude Include="colors.h" />
+    <ClInclude Include="ListaSudokus.h" />
     <ClInclude Include="reglasTablero.h" />
     <ClInclude Include="tablero.h" />
   </ItemGroup>

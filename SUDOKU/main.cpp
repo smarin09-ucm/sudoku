@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -75,6 +76,7 @@ void mostrar_bloqueos(tReglas& juego)
 
 int main()
 {
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     tReglas juego;
     ifstream archivo;
     string nombre;
