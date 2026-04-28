@@ -3,36 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:reglasTablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:ListaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\colors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:colors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\checkML.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:checkML.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sarma\\AppData\\Local\\Temp\\8aa842db-def6-447f-8a72-211191a29a83_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:celda.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:celda.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -43,8 +38,20 @@
       "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:celda.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{27BF7656-7A6A-4D8C-9092-9A1CDA757F5F}|SUDOKU.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sarma\\AppData\\Local\\Temp\\66a24936-64df-471b-b449-ec97d105322f_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sarma\\AppData\\Local\\Temp\\a1c29653-bfe0-4015-bd21-b54687efa060_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sarma\\AppData\\Local\\Temp\\31e4c7e7-9414-452d-a7a4-cb5ac7bb47e3_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sarma\\AppData\\Local\\Temp\\1270e0b8-b5ad-4a9d-8c09-9245a36a4182_sudoku_v2_final.zip.sudoku_v2_final.zip\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,24 +61,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListaSudokus.h",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.h",
-              "RelativeDocumentMoniker": "ListaSudokus.h",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.h",
-              "RelativeToolTip": "ListaSudokus.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-27T16:24:38.553Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -81,35 +75,48 @@
               "RelativeDocumentMoniker": "reglasTablero.h",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.h",
               "RelativeToolTip": "reglasTablero.h",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-23T11:15:58.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListaSudokus.cpp",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.cpp",
-              "RelativeDocumentMoniker": "ListaSudokus.cpp",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.cpp",
-              "RelativeToolTip": "ListaSudokus.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-27T16:24:05.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "reglasTablero.cpp",
               "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp",
               "RelativeDocumentMoniker": "reglasTablero.cpp",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\reglasTablero.cpp",
               "RelativeToolTip": "reglasTablero.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAAAIAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-23T11:14:04.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListaSudokus.h",
+              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.h",
+              "RelativeDocumentMoniker": "ListaSudokus.h",
+              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.h",
+              "RelativeToolTip": "ListaSudokus.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-27T16:24:38.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListaSudokus.cpp",
+              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.cpp",
+              "RelativeDocumentMoniker": "ListaSudokus.cpp",
+              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\ListaSudokus.cpp",
+              "RelativeToolTip": "ListaSudokus.cpp",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAAACoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-27T16:24:05.885Z",
               "EditorCaption": ""
             },
             {
@@ -118,90 +125,154 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "checkML.h",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\checkML.h",
-              "RelativeDocumentMoniker": "checkML.h",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\checkML.h",
-              "RelativeToolTip": "checkML.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-27T11:06:46.389Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "colors.h",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\colors.h",
-              "RelativeDocumentMoniker": "colors.h",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\colors.h",
-              "RelativeToolTip": "colors.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-27T11:05:41.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "tablero.h",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.h",
-              "RelativeDocumentMoniker": "tablero.h",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.h",
-              "RelativeToolTip": "tablero.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T11:17:12.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "tablero.cpp",
-              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.cpp",
-              "RelativeDocumentMoniker": "tablero.cpp",
-              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.cpp",
-              "RelativeToolTip": "tablero.cpp",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-23T11:14:07.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFoAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-23T11:14:10.417Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
+              "Title": "tablero.h",
+              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.h",
+              "RelativeDocumentMoniker": "tablero.h",
+              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.h",
+              "RelativeToolTip": "tablero.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-23T11:17:12.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "tablero.cpp",
+              "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.cpp",
+              "RelativeDocumentMoniker": "tablero.cpp",
+              "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\tablero.cpp",
+              "RelativeToolTip": "tablero.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-23T11:14:07.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "celda.h",
               "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.h",
               "RelativeDocumentMoniker": "celda.h",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.h",
               "RelativeToolTip": "celda.h",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-23T11:16:41.875Z"
+              "WhenOpened": "2026-04-23T11:16:41.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "celda.cpp",
               "DocumentMoniker": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.cpp",
               "RelativeDocumentMoniker": "celda.cpp",
               "ToolTip": "C:\\Users\\sarma\\Desktop\\ecosistema  final\\sudoku\\SUDOKU\\celda.cpp",
               "RelativeToolTip": "celda.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-19T11:34:24.816Z"
+              "WhenOpened": "2026-03-19T11:34:24.816Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "9bf74f2a-2014-44b5-ba1c-9b0f0efbd2e9",
+        "Display": 0,
+        "X": 425,
+        "Y": 119,
+        "Width": 863,
+        "Height": 841,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "listaSudokus.h",
+              "DocumentMoniker": "C:\\Users\\sarma\\AppData\\Local\\Temp\\31e4c7e7-9414-452d-a7a4-cb5ac7bb47e3_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\31e4c7e7-9414-452d-a7a4-cb5ac7bb47e3_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.h",
+              "ToolTip": "C:\\Users\\sarma\\AppData\\Local\\Temp\\31e4c7e7-9414-452d-a7a4-cb5ac7bb47e3_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.h [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\31e4c7e7-9414-452d-a7a4-cb5ac7bb47e3_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.h [Solo lectura]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-28T09:16:26.92Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\sarma\\AppData\\Local\\Temp\\1270e0b8-b5ad-4a9d-8c09-9245a36a4182_sudoku_v2_final.zip.sudoku_v2_final.zip\\main.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\1270e0b8-b5ad-4a9d-8c09-9245a36a4182_sudoku_v2_final.zip.sudoku_v2_final.zip\\main.cpp",
+              "ToolTip": "C:\\Users\\sarma\\AppData\\Local\\Temp\\1270e0b8-b5ad-4a9d-8c09-9245a36a4182_sudoku_v2_final.zip.sudoku_v2_final.zip\\main.cpp [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\1270e0b8-b5ad-4a9d-8c09-9245a36a4182_sudoku_v2_final.zip.sudoku_v2_final.zip\\main.cpp [Solo lectura]",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAANoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-28T09:11:10.974Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "reglasTablero.h",
+              "DocumentMoniker": "C:\\Users\\sarma\\AppData\\Local\\Temp\\8aa842db-def6-447f-8a72-211191a29a83_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\8aa842db-def6-447f-8a72-211191a29a83_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.h",
+              "ToolTip": "C:\\Users\\sarma\\AppData\\Local\\Temp\\8aa842db-def6-447f-8a72-211191a29a83_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.h [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\8aa842db-def6-447f-8a72-211191a29a83_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.h [Solo lectura]",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-28T08:46:49.376Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "listaSudokus.cpp",
+              "DocumentMoniker": "C:\\Users\\sarma\\AppData\\Local\\Temp\\a1c29653-bfe0-4015-bd21-b54687efa060_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\a1c29653-bfe0-4015-bd21-b54687efa060_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.cpp",
+              "ToolTip": "C:\\Users\\sarma\\AppData\\Local\\Temp\\a1c29653-bfe0-4015-bd21-b54687efa060_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.cpp [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\a1c29653-bfe0-4015-bd21-b54687efa060_sudoku_v2_final.zip.sudoku_v2_final.zip\\listaSudokus.cpp [Solo lectura]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-28T10:12:07.303Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "reglasTablero.cpp",
+              "DocumentMoniker": "C:\\Users\\sarma\\AppData\\Local\\Temp\\66a24936-64df-471b-b449-ec97d105322f_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\66a24936-64df-471b-b449-ec97d105322f_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.cpp",
+              "ToolTip": "C:\\Users\\sarma\\AppData\\Local\\Temp\\66a24936-64df-471b-b449-ec97d105322f_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.cpp [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\66a24936-64df-471b-b449-ec97d105322f_sudoku_v2_final.zip.sudoku_v2_final.zip\\reglasTablero.cpp [Solo lectura]",
+              "ViewState": "AgIAAIIBAAAAAAAAAAAAAJoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-28T08:46:48.219Z",
+              "EditorCaption": " [Solo lectura]"
             }
           ]
         }

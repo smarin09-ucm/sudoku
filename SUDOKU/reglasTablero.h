@@ -4,15 +4,17 @@
 #include <iostream>
 #include "celda.h"
 #include "tablero.h"
+using namespace std;
 
 struct tPos {
     int f;
     int c;
 };
 
-struct tListaBLoq {
+struct tListaBloq {
     int contBloq;
-    tPos lista[MAX_DIM * MAX_DIM];
+    int capacidad;
+    tPos* lista;   // array dinamico de tPos( a lo mejor mal???)
 };
 
 struct tValor {
@@ -31,15 +33,31 @@ private:
     tTablero tablero;
     tTablero tableroOriginal;
     int cont;
-    tListaBLoq lista;
-    void actualiza_bloqueos();
+    tListaBloq lista;
     tValores valores_celda;
+
+    void actualiza_bloqueos();
     void inicializa_valores();
 
     //actualiza los valores una vez escogidos
     void actualiza_valores(int f, int c, int v, bool poniendo);
+    void actualiza_una_celda(int i, int j, int idx, bool poniendo);
+
+    //nuevos métodos privados
+    void inicializa_lista_bloq();
+    void libera_lista_bloq();
+    void copia_lista_bloq(const tListaBloq& origen);
+    //
+
 public:
     tReglas();
+
+    //nuevo
+    tReglas(const tReglas& r);
+    tReglas& operator=(const tReglas& r);
+    ~tReglas();
+    //
+
     const int dame_dimension();
     tCelda dame_celda(int f, int c);
     const bool terminado();
@@ -53,5 +71,13 @@ public:
     void quita_valor(int f, int c);
     void reset();
     void autocompletar();
-    void carga_sudoku(std::ifstream& arch); 
+    void carga_sudoku(ifstream& arch); 
+
+    //nuevo
+    int dame_num_celdas_con_n_posibles(int n);
+    void guarda_partida(ofstream& arch);
+    //
 };
+
+bool operator<(tReglas& a, tReglas& b);
+bool operator==(tReglas& a, tReglas& b);

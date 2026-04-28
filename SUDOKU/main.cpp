@@ -6,6 +6,8 @@
 #include "tablero.h"
 #include "reglasTablero.h"
 #include "colors.h"
+#include "checkML.h"
+#include "ListaSudokus.h"
 using namespace std;
 
 
@@ -74,27 +76,41 @@ void mostrar_bloqueos(tReglas& juego)
     }
 }
 
-int main()
+//RESOLVER SUDOKU RECURSIVAMENTE
+bool resolver_sudoku(tReglas& sudoku, int fila, int columna)
 {
-    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-    tReglas juego;
-    ifstream archivo;
-    string nombre;
-    cout << "Introduce el nombre del archivo: ";
-    cin >> nombre;
-    archivo.open(nombre);
-    if (!archivo.is_open())
-    {
-        cout << "Error al abrir el archivo\n";
-        return 0;
-    }
-    juego.carga_sudoku(archivo);
-    archivo.close();
+    int dim = sudoku.dame_dimension();
 
+    // avanzar a la siguiente celda vacia
+    while (fila < dim && !sudoku.dame_celda(fila, columna).es_vacia())
+    {
+        columna++;
+        if (columna == dim) { columna = 0; fila++; }
+    }
+
+    if (fila == dim) return true;  // todas rellenas
+
+    for (int v = 1; v <= dim; v++)
+    {
+        if (sudoku.es_valor_posible(fila, columna, v))
+        {
+            sudoku.pon_valor(fila, columna, v);
+            int sigFila = fila, sigCol = columna + 1;
+            if (sigCol == dim) { sigCol = 0; sigFila++; }
+            if (resolver_sudoku(sudoku, sigFila, sigCol)) return true;
+            sudoku.quita_valor(fila, columna);
+        }
+    }
+    return false;
+}
+
+//JUGAR A UN SUDOKU
+void jugar(tReglas& juego)
+{
     int opcion = 0;
     bool salir = false;
 
-    while (!salir && !juego.terminado()) 
+    while (!salir && !juego.terminado())
     {
         cout << "\nSUDOKU\n";
         mostrar_tablero(juego);
@@ -104,12 +120,13 @@ int main()
         cout << "3.- reset\n";
         cout << "4.- posibles valores de una celda vacia\n";
         cout << "5.- autocompletar celdas con valor unico\n";
-        cout << "6.- salir\n";
+        cout << "6.- resolver sudoku\n";
+        cout << "7.- salir\n";
         cout << "Elige una opcion: ";
         cin >> opcion;
 
         int f, c, v;
-        switch (opcion) 
+        switch (opcion)
         {
         case 1:
             cout << "Fila y columna entre 1..." << juego.dame_dimension() << ": ";
@@ -117,47 +134,35 @@ int main()
             cout << "Valor: ";
             cin >> v;
             if (juego.es_valor_posible(f - 1, c - 1, v))
-            {
                 juego.pon_valor(f - 1, c - 1, v);
-            }
-            else 
-            {
+            else
                 cout << RED << "No se puede poner ese valor" << RESET << "\n";
-            }
             mostrar_bloqueos(juego);
             break;
         case 2:
             cout << "Fila y columna entre 1..." << juego.dame_dimension() << ": ";
             cin >> f >> c;
-            if (juego.dame_celda(f - 1, c - 1).es_vacia() || juego.dame_celda(f - 1, c - 1).es_original()) {
+            if (juego.dame_celda(f - 1, c - 1).es_vacia() || juego.dame_celda(f - 1, c - 1).es_original())
                 cout << RED << "No se puede quitar ese valor" << RESET << "\n";
-            }
-            else {
+            else
                 juego.quita_valor(f - 1, c - 1);
-            }
             break;
         case 3:
             juego.reset();
             break;
         case 4:
-            {
+        {
             cout << "Fila y columna entre 1..." << juego.dame_dimension() << ": ";
             cin >> f >> c;
-            if (!juego.dame_celda(f - 1, c - 1).es_vacia()) {
+            if (!juego.dame_celda(f - 1, c - 1).es_vacia())
                 cout << RED << "La celda no esta vacia" << RESET << "\n";
-            }
-            else 
+            else
             {
-                int vals[MAX_DIM];
-                int cont = 0;
-                int n = juego.posibles_valores(f,c);
+                int dim = juego.dame_dimension();
                 cout << "Los valores posibles para la celda son: { ";
-                for (int i = 0; i < 10 && cont < n; i++) {
-                    if (juego.es_valor_posible(f-1, c-1, i)) {
+                for (int i = 1; i <= dim; i++)
+                    if (juego.es_valor_posible(f - 1, c - 1, i))
                         cout << i << " ";
-                        cont++;
-                    }
-                }
                 cout << "}\n";
             }
             break;
@@ -167,17 +172,127 @@ int main()
             mostrar_bloqueos(juego);
             break;
         case 6:
+            if (resolver_sudoku(juego, 0, 0))
+                cout << GREEN << "Sudoku resuelto!\n" << RESET;
+            else
+                cout << RED << "No tiene solucion.\n" << RESET;
+            mostrar_tablero(juego);
+            salir = true;
+            break;
+        case 7:
             salir = true;
             break;
         default:
             cout << "Opcion no valida\n";
         }
     }
-
     if (juego.terminado())
     {
-        cout << "\n¡Sudoku completado!\n";
+        cout << "\n" << GREEN << "Sudoku completado!" << RESET << "\n";
         mostrar_tablero(juego);
     }
+}
+
+//MAIN V2
+int main()
+{
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+    // Cargar lista de partidas y lista de sudokus originales
+    tListaSudokus partidas;
+    tListaSudokus originales;
+    partidas.carga_lista_partidas("lista_partidas.txt");
+    originales.carga_lista_sudokus("lista_sudokus.txt");
+
+    bool app_salir = false;
+
+    while (!app_salir)
+    {
+        char modo;
+        cout << "\nPartida nueva (N), continuar partida (C) o abandonar la aplicacion (A)? ";
+        cin >> modo;
+        modo = toupper(modo);
+
+        if (modo == 'A')
+        {
+            app_salir = true;
+        }
+        else if (modo == 'C' && partidas.dame_num_elems() == 0)
+        {
+            cout << "No hay partidas empezadas. Se mostraran los sudokus disponibles.\n";
+            modo = 'N';
+        }
+
+        if (!app_salir)
+        {
+            tListaSudokus* lista = (modo == 'C') ? &partidas : &originales;
+
+            if (lista->dame_num_elems() == 0)
+            {
+                cout << "No hay sudokus disponibles.\n";
+                continue;
+            }
+
+            // Mostrar lista y pedir eleccion
+            lista->mostrar_lista();
+            cout << "Elige un sudoku: ";
+            int eleccion;
+            cin >> eleccion;
+            eleccion--;  // pasar a indice 0
+
+            if (eleccion < 0 || eleccion >= lista->dame_num_elems())
+            {
+                cout << "Opcion no valida.\n";
+                continue;
+            }
+
+            // Ver o jugar
+            cout << "1.- Visualizar sudoku\n2.- Jugar al sudoku\nElige: ";
+            int op;
+            cin >> op;
+
+            if (op == 1)
+            {
+                mostrar_tablero((*lista)[eleccion]);
+            }
+            else if (op == 2)
+            {
+                // Hacer copia para jugar
+                tReglas juego = (*lista)[eleccion];
+                bool era_partida = (modo == 'C');
+
+                jugar(juego);
+
+                if (juego.terminado())
+                {
+                    // Si era partida empezada, borrarla
+                    if (era_partida)
+                        partidas.eliminar(eleccion);
+                    // Si era nueva, no se hace nada
+                }
+                else
+                {
+                    // Se abandono con salir
+                    if (era_partida)
+                    {
+                        // Eliminar la antigua y reinsertar actualizada
+                        partidas.eliminar(eleccion);
+                        partidas.insertar(juego);
+                    }
+                    else
+                    {
+                        // Era nueva: guardar en partidas
+                        partidas.insertar(juego);
+                    }
+                }
+            }
+        }
+    }
+
+    // Guardar lista de partidas al salir
+    partidas.guarda_lista_partidas("lista_partidas.txt");
+
+    cout << "Hasta luego!\n";
     return 0;
 }
+
