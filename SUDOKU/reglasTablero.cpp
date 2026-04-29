@@ -1,3 +1,4 @@
+#include "checkML.h"
 #include "reglasTablero.h"
 #include <fstream>
 #include <iostream>
@@ -6,16 +7,38 @@ using namespace std;
 //GESTION INTERNA DE LISTA BLOQUEADAS (MEMORIA DINAMICA)
 void tReglas::copia_lista_bloq(const tListaBloq& origen)
 {
-    lista.capacidad = origen.capacidad > 0 ? origen.capacidad : MAX_DIM * MAX_DIM;
-    lista.lista = new tPos[lista.capacidad];  // array de tPos directamente
+    lista.capacidad = origen.capacidad;
     lista.contBloq = origen.contBloq;
+
+    //reservar array de punteros
+    lista.lista = new tPos * [lista.capacidad];
+
     for (int i = 0; i < lista.contBloq; i++)
-        lista.lista[i] = origen.lista[i];
+    {
+        if (origen.lista[i] != nullptr)
+        {
+            lista.lista[i] = new tPos;
+            *lista.lista[i] = *origen.lista[i];  
+        }
+        else
+        {
+            lista.lista[i] = nullptr;
+        }
+    }
 }
 
 void tReglas::libera_lista_bloq()
 {
-    delete[] lista.lista;  // un solo delete[], sin bucle
+    if (lista.lista != nullptr)
+    {
+        for (int i = 0; i < lista.contBloq; i++)
+        {
+            delete lista.lista[i];   // liberar cada tPos
+            lista.lista[i] = nullptr;
+        }
+        delete[] lista.lista;        // liberar array de punteros
+    }
+
     lista.lista = nullptr;
     lista.contBloq = 0;
     lista.capacidad = 0;
@@ -25,13 +48,15 @@ void tReglas::inicializa_lista_bloq()
 {
     lista.contBloq = 0;
     lista.capacidad = MAX_DIM * MAX_DIM;
-    lista.lista = new tPos[lista.capacidad];
+    lista.lista = new tPos*[lista.capacidad];
 }
 //CONSTRUCTORA, DESTRUCTORA Y OPERADOR
-tReglas::tReglas() 
+tReglas::tReglas()
 {
     cont = 0;
+    lista.lista = nullptr;
     lista.contBloq = 0;
+    lista.capacidad = 0;
 }
 
 //constructora con parametros
@@ -41,9 +66,11 @@ tReglas::tReglas(const tReglas& r)
     tableroOriginal = r.tableroOriginal;
     cont = r.cont;
     valores_celda = r.valores_celda;
+
     lista.lista = nullptr;
     lista.contBloq = 0;
     lista.capacidad = 0;
+
     copia_lista_bloq(r.lista);
 }
 
@@ -53,14 +80,12 @@ tReglas& tReglas::operator=(const tReglas& r)
     if (this != &r)
     {
         libera_lista_bloq();  // libera lo que habia
+
         tablero = r.tablero;
         tableroOriginal = r.tableroOriginal;
         cont = r.cont;
         valores_celda = r.valores_celda;
-        // inicializar antes de copiar
-        lista.lista = nullptr;
-        lista.contBloq = 0;
-        lista.capacidad = 0;
+
         copia_lista_bloq(r.lista);
     }
     return *this;
@@ -116,9 +141,10 @@ const tCelda tReglas::dame_celda_bloqueada(int p, int& f, int& c)
 {
     if (p >= 0 && p < lista.contBloq)
     {
-        f = lista.lista[p].f;   // punto en vez de flecha
-        c = lista.lista[p].c;
+        f = lista.lista[p]->f;
+        c = lista.lista[p]->c;
     }
+    else f = c = -1;
     return tablero.dame_celda(f, c);
 }
 
@@ -233,16 +259,30 @@ void tReglas::actualiza_valores(int f, int c, int v, bool poniendo)
 
 void tReglas::actualiza_bloqueos()
 {
-    lista.contBloq = 0;  // simplemente resetear el contador
+    // liberar los anteriores
+    for (int i = 0; i < lista.contBloq; i++)
+        delete lista.lista[i];
+
+    lista.contBloq = 0;
+
     int dim = tablero.dame_dim();
+
     for (int i = 0; i < dim; i++)
+    {
         for (int j = 0; j < dim; j++)
+        {
             if (tablero.dame_celda(i, j).es_vacia() && posibles_valores(i, j) == 0)
             {
-                lista.lista[lista.contBloq].f = i;
-                lista.lista[lista.contBloq].c = j;
-                lista.contBloq++;
+                if (lista.contBloq < lista.capacidad)
+                {
+                    lista.lista[lista.contBloq] = new tPos;
+                    lista.lista[lista.contBloq]->f = i;
+                    lista.lista[lista.contBloq]->c = j;
+                    lista.contBloq++;
+                }
             }
+        }
+    }
 }
 
 //MODIFICADORES
@@ -323,8 +363,12 @@ void tReglas::autocompletar()
 //CARGA Y GUARDADO
 void tReglas::carga_sudoku(ifstream& archivo) 
 {
+    libera_lista_bloq();
+    inicializa_lista_bloq();
+
     int dim;
     archivo >> dim;
+
     tablero = tTablero(dim);
     cont = 0;
 

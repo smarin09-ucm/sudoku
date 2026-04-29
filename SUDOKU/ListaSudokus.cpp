@@ -165,7 +165,10 @@ void tListaSudokus::carga_lista_sudokus(const string& nombreArchivo)
 void tListaSudokus::carga_lista_partidas(const string& nombreArchivo)
 {
     ifstream arch(nombreArchivo);
-    if (!arch.is_open()) return;
+    if (!arch.is_open()) {
+        cout << "Error abriendo archivo: " << nombreArchivo << endl;
+        return;
+    }
 
     int n;
     arch >> n;
@@ -190,7 +193,9 @@ void tListaSudokus::carga_lista_partidas(const string& nombreArchivo)
 void tListaSudokus::guarda_lista_partidas(const string& nombreArchivo)
 {
     ofstream arch(nombreArchivo);
-    if (!arch.is_open()) return;
+    if (!arch.is_open()) {
+        return;
+    }
 
     arch << numElems << "\n";
     for (int i = 0; i < numElems; i++)

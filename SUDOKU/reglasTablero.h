@@ -14,7 +14,7 @@ struct tPos {
 struct tListaBloq {
     int contBloq;
     int capacidad;
-    tPos* lista;   // array dinamico de tPos( a lo mejor mal???)
+    tPos** lista;   // array dinamico de punteros a tPos
 };
 
 struct tValor {
