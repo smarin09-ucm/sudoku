@@ -71,7 +71,7 @@ public:
     void quita_valor(int f, int c);
     void reset();
     void autocompletar();
-    void carga_sudoku(ifstream& arch); 
+    void carga_sudoku( ifstream& arch); 
 
     //nuevo
     int dame_num_celdas_con_n_posibles(int n);

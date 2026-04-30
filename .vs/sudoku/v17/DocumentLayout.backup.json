@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\ListaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_partidas.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\lista_partidas.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\reglasTablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\reglasTablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\reglasTablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\ListaSudokus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\ListaSudokus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_sudokus.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\lista_sudokus.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_partidas.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SUDOKU\\lista_partidas.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\celda.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -50,92 +54,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "lista_partidas.txt",
-              "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_partidas.txt",
-              "RelativeDocumentMoniker": "SUDOKU\\lista_partidas.txt",
-              "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_partidas.txt",
-              "RelativeToolTip": "SUDOKU\\lista_partidas.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "lista_sudokus.txt",
+              "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_sudokus.txt",
+              "RelativeDocumentMoniker": "SUDOKU\\lista_sudokus.txt",
+              "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_sudokus.txt",
+              "RelativeToolTip": "SUDOKU\\lista_sudokus.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-04-29T18:26:17.476Z",
+              "WhenOpened": "2026-04-30T11:22:11.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ListaSudokus.cpp",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.cpp",
               "RelativeDocumentMoniker": "SUDOKU\\ListaSudokus.cpp",
               "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.cpp",
               "RelativeToolTip": "SUDOKU\\ListaSudokus.cpp",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAAFkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAYwJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-29T17:21:51.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ListaSudokus.h",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.h",
               "RelativeDocumentMoniker": "SUDOKU\\ListaSudokus.h",
               "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\ListaSudokus.h",
               "RelativeToolTip": "SUDOKU\\ListaSudokus.h",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAACQAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-29T17:21:45.828Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "reglasTablero.h",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\reglasTablero.h",
               "RelativeDocumentMoniker": "SUDOKU\\reglasTablero.h",
               "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\reglasTablero.h",
               "RelativeToolTip": "SUDOKU\\reglasTablero.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAEkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-01T11:10:48.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "reglasTablero.cpp",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\reglasTablero.cpp",
               "RelativeDocumentMoniker": "SUDOKU\\reglasTablero.cpp",
               "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\reglasTablero.cpp",
               "RelativeToolTip": "SUDOKU\\reglasTablero.cpp",
-              "ViewState": "AgIAALgBAAAAAAAAAAAAAMMBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAhwHEBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-01T11:10:49.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "tablero.cpp",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.cpp",
               "RelativeDocumentMoniker": "SUDOKU\\tablero.cpp",
               "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.cpp",
               "RelativeToolTip": "SUDOKU\\tablero.cpp",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-01T11:07:34.885Z"
+              "WhenOpened": "2026-04-01T11:07:34.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "tablero.h",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\tablero.h",
               "RelativeDocumentMoniker": "SUDOKU\\tablero.h",
@@ -143,11 +144,37 @@
               "RelativeToolTip": "SUDOKU\\tablero.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-01T11:10:44.888Z"
+              "WhenOpened": "2026-04-01T11:10:44.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\main.cpp",
+              "RelativeDocumentMoniker": "SUDOKU\\main.cpp",
+              "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\main.cpp",
+              "RelativeToolTip": "SUDOKU\\main.cpp",
+              "ViewState": "AgIAABcBAAAAAAAAAAAYwCUBAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-01T11:10:52.62Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "lista_partidas.txt",
+              "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_partidas.txt",
+              "RelativeDocumentMoniker": "SUDOKU\\lista_partidas.txt",
+              "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\lista_partidas.txt",
+              "RelativeToolTip": "SUDOKU\\lista_partidas.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-04-29T18:26:17.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "celda.cpp",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\celda.cpp",
               "RelativeDocumentMoniker": "SUDOKU\\celda.cpp",
@@ -159,19 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\main.cpp",
-              "RelativeDocumentMoniker": "SUDOKU\\main.cpp",
-              "ToolTip": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\main.cpp",
-              "RelativeToolTip": "SUDOKU\\main.cpp",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAMUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-01T11:10:52.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "celda.h",
               "DocumentMoniker": "C:\\Users\\anamh\\Documents\\GitHub\\sudoku\\SUDOKU\\celda.h",
               "RelativeDocumentMoniker": "SUDOKU\\celda.h",

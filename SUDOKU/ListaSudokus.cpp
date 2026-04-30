@@ -142,18 +142,23 @@ void tListaSudokus::mostrar_lista()
 void tListaSudokus::carga_lista_sudokus(const string& nombreArchivo)
 {
     ifstream arch(nombreArchivo);
-    if (!arch.is_open()) return;
+    if (!arch.is_open()) {
+        cout << "No se ha abierto lista sudokus";
+        return;
+    }
 
-    int n;
-    arch >> n;
-    for (int i = 0; i < n; i++)
+    arch >> numElems;
+    
+    for (int i = 0; i < numElems; i++)
     {
         string nombre;
         arch >> nombre;
         ifstream archSudoku(nombre);
         if (archSudoku.is_open())
         {
+            cout << numElems;
             tReglas r;
+            cout << "sigue";
             r.carga_sudoku(archSudoku);
             archSudoku.close();
             insertar(r);
@@ -162,6 +167,49 @@ void tListaSudokus::carga_lista_sudokus(const string& nombreArchivo)
     arch.close();
 }
 
+
+/*void tListaSudokus::carga_lista_sudokus(const string& nombreArchivo)
+{
+    ifstream arch(nombreArchivo);
+    if (!arch.is_open())
+    {
+        cout << "Error abriendo archivo: " << nombreArchivo << endl;
+        return;
+    }
+
+    int n;
+    arch >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        string nombre;
+        arch >> nombre;
+
+
+        ifstream archSudoku(nombre);
+
+        if (!archSudoku.is_open())
+        {
+            cout << "ERROR: no se pudo abrir el sudoku: " << nombre << endl;
+        }
+        else
+        {
+            tReglas r;
+            r.carga_sudoku(archSudoku);
+
+            cout << "OK: sudoku cargado desde " << nombre << endl;
+
+            insertar(r);  // se añade a la lista ordenada
+
+            archSudoku.close();
+        }
+    }
+
+    cout << "Total sudokus cargados: " << numElems << endl;
+
+    arch.close();
+}
+*/
 void tListaSudokus::carga_lista_partidas(const string& nombreArchivo)
 {
     ifstream arch(nombreArchivo);
@@ -176,7 +224,7 @@ void tListaSudokus::carga_lista_partidas(const string& nombreArchivo)
     {
         tReglas r;
         r.carga_sudoku(arch);  // carga la descripcion del sudoku original
-
+   
         // leer posiciones ocupadas hasta el centinela -1
         int f;
         while (arch >> f && f != -1)
@@ -190,10 +238,14 @@ void tListaSudokus::carga_lista_partidas(const string& nombreArchivo)
     arch.close();
 }
 
+
+
+
 void tListaSudokus::guarda_lista_partidas(const string& nombreArchivo)
 {
     ofstream arch(nombreArchivo);
     if (!arch.is_open()) {
+        cout << "Error abriendo archivo: " << nombreArchivo << endl;
         return;
     }
 
@@ -203,3 +255,4 @@ void tListaSudokus::guarda_lista_partidas(const string& nombreArchivo)
 
     arch.close();
 }
+

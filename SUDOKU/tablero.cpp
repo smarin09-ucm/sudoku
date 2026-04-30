@@ -9,7 +9,7 @@ tTablero::tTablero() {
 
 //	Constructora con parametros
 tTablero::tTablero(int d) {
-	if (d > 0 && d <= MAX_DIM) {
+	if (d >= 0 && d <= MAX_DIM) {
 		dim = d;
 	}
 	else dim = MAX_DIM;

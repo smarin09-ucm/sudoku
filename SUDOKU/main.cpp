@@ -201,8 +201,10 @@ int main()
     // Cargar lista de partidas y lista de sudokus originales
     tListaSudokus partidas;
     tListaSudokus originales;
-    partidas.carga_lista_partidas("lista_partidas.txt");
-    originales.carga_lista_sudokus("lista_sudokus.txt");
+    originales.carga_lista_sudokus("C:/Users/anamh/Documents/GitHub/sudoku/SUDOKU/lista_sudokus.txt");
+    partidas.carga_lista_partidas("C:/Users/anamh/Documents/GitHub/sudoku/SUDOKU/lista_partidas.txt");
+    
+    
 
     bool app_salir = false;
 
@@ -226,7 +228,7 @@ int main()
         if (!app_salir)
         {
             tListaSudokus* lista = (modo == 'C') ? &partidas : &originales;
-
+            cout << lista->dame_num_elems();
             if (lista->dame_num_elems() == 0)
             {
                 cout << "No hay sudokus disponibles.\n";
@@ -251,8 +253,7 @@ int main()
             int op;
             cin >> op;
 
-            if (op == 1)
-            {
+            if (op == 1){         
                 mostrar_tablero((*lista)[eleccion]);
             }
             else if (op == 2)
@@ -290,7 +291,7 @@ int main()
     }
 
     // Guardar lista de partidas al salir
-    partidas.guarda_lista_partidas("lista_partidas.txt");
+    partidas.guarda_lista_partidas("C:/Users/anamh/Documents/GitHub/sudoku/SUDOKU/lista_partidas.txt");
 
     cout << "Hasta luego!\n";
     return 0;

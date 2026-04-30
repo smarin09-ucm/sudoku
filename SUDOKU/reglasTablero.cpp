@@ -361,12 +361,13 @@ void tReglas::autocompletar()
 }
 
 //CARGA Y GUARDADO
-void tReglas::carga_sudoku(ifstream& archivo) 
+void tReglas::carga_sudoku( ifstream& archivo) 
 {
+    cout << "estoy en carag sudoku";
     libera_lista_bloq();
     inicializa_lista_bloq();
 
-    int dim;
+    int dim=0;
     archivo >> dim;
 
     tablero = tTablero(dim);
