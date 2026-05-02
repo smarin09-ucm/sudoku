@@ -10,7 +10,7 @@
 #include "ListaSudokus.h"
 using namespace std;
 
-
+//hola
 void mostrar_tablero(tReglas& juego) 
 {
     int dim = juego.dame_dimension();
