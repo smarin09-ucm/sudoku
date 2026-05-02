@@ -201,8 +201,8 @@ int main()
     // Cargar lista de partidas y lista de sudokus originales
     tListaSudokus partidas;
     tListaSudokus originales;
-    originales.carga_lista_sudokus("C:/Users/anamh/Documents/GitHub/sudoku/SUDOKU/lista_sudokus.txt");
-    partidas.carga_lista_partidas("C:/Users/anamh/Documents/GitHub/sudoku/SUDOKU/lista_partidas.txt");
+    originales.carga_lista_sudokus("lista_sudokus.txt");
+    partidas.carga_lista_partidas("lista_partidas.txt");
     
     
 
@@ -291,7 +291,7 @@ int main()
     }
 
     // Guardar lista de partidas al salir
-    partidas.guarda_lista_partidas("C:/Users/anamh/Documents/GitHub/sudoku/SUDOKU/lista_partidas.txt");
+    partidas.guarda_lista_partidas("lista_partidas.txt");
 
     cout << "Hasta luego!\n";
     return 0;

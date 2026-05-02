@@ -79,5 +79,5 @@ public:
     //
 };
 
-bool operator<(tReglas& a, tReglas& b);
-bool operator==(tReglas& a, tReglas& b);
+bool operator<( tReglas& a,  tReglas& b);
+bool operator==( tReglas& a,  tReglas& b);

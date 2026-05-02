@@ -26,7 +26,7 @@ public:
 	const tReglas& dame_sudoku(int i);
 	tReglas& operator[](int i);
 
-	void insertar(tReglas sudoku);
+	void insertar( tReglas sudoku);
 	void eliminar(int pos); // elimina el elemento de la posición pos
 	void mostrar_lista();
 

@@ -363,10 +363,9 @@ void tReglas::autocompletar()
 //CARGA Y GUARDADO
 void tReglas::carga_sudoku( ifstream& archivo) 
 {
-    cout << "estoy en carag sudoku";
     libera_lista_bloq();
     inicializa_lista_bloq();
-
+    
     int dim=0;
     archivo >> dim;
 
@@ -431,22 +430,25 @@ bool operator<(tReglas& a, tReglas& b)
 {
     int vaciasA = a.dame_num_celdas_vacias();
     int vaciasB = b.dame_num_celdas_vacias();
-    if (vaciasA != vaciasB) return vaciasA < vaciasB;
+
+    if (vaciasA != vaciasB)
+        return vaciasA < vaciasB;
 
     int dim = a.dame_dimension();
+
     for (int n = 1; n <= dim; n++)
     {
         int cA = a.dame_num_celdas_con_n_posibles(n);
         int cB = b.dame_num_celdas_con_n_posibles(n);
-        if (cA != cB) return cA > cB;
+
+        if (cA != cB)
+            return cA > cB;
     }
+
     return false;
 }
 
 bool operator==(tReglas& a, tReglas& b)
 {
-    bool aMenorB = operator<(a, b);
-    bool bMenorA = operator<(b, a);
-    return !aMenorB && !bMenorA;
+    return !(a < b) && !(b < a);
 }
-
