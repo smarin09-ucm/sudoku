@@ -36,6 +36,10 @@ private:
     tListaBloq lista;
     tValores valores_celda;
 
+    //mejora version 2
+    typedef int arrValores[MAX_DIM + 1];
+    arrValores cuantas_celdas;
+
     void actualiza_bloqueos();
     void inicializa_valores();
 
@@ -48,6 +52,9 @@ private:
     void libera_lista_bloq();
     void copia_lista_bloq(const tListaBloq& origen);
     //
+
+    //mejora version 2
+    void recalcular_cuantas_celdas();
 
 public:
     tReglas();

@@ -174,16 +174,15 @@ const int tReglas::posibles_valores(int f, int c)
     return cnt;
 }
 
+//mejora version 2
 // cuantas celdas vacias tienen exactamente n valores posibles
 int tReglas::dame_num_celdas_con_n_posibles(int n)
 {
     int dim = tablero.dame_dim();
-    int cnt = 0;
-    for (int i = 0; i < dim; i++)
-        for (int j = 0; j < dim; j++)
-            if (tablero.dame_celda(i, j).es_vacia() && posibles_valores(i, j) == n)
-                cnt++;
-    return cnt;
+    if (n < 0 || n > dim)
+        return 0;
+
+    return cuantas_celdas[n];
 }
 
 //LOGICA INTERNA DE VALORES POSIBLES
@@ -213,6 +212,8 @@ void tReglas::inicializa_valores()
                 actualiza_valores(i, j, cel.dame_valor(), true);
             }
         }
+    recalcular_cuantas_celdas();
+
 }
 
 void tReglas::actualiza_una_celda(int i, int j, int idx, bool poniendo)
@@ -293,6 +294,8 @@ void tReglas::pon_valor(int f, int c, int v) {
         tablero.set_celda(f, c, celda); cont++; 
         actualiza_valores(f, c, v, true);
         actualiza_bloqueos();
+        recalcular_cuantas_celdas();
+
     } 
 }
 
@@ -310,6 +313,8 @@ void tReglas::quita_valor(int f, int c)
 
         actualiza_valores(f, c, v, false);
         actualiza_bloqueos();
+        recalcular_cuantas_celdas();
+
     }
 }
 
@@ -451,4 +456,25 @@ bool operator<(tReglas& a, tReglas& b)
 bool operator==(tReglas& a, tReglas& b)
 {
     return !(a < b) && !(b < a);
+}
+
+//mejora version 2
+void tReglas::recalcular_cuantas_celdas()
+{
+    int dim = tablero.dame_dim();
+
+    for (int i = 0; i <= dim; i++)
+        cuantas_celdas[i] = 0;
+
+    for (int i = 0; i < dim; i++)
+    {
+        for (int j = 0; j < dim; j++)
+        {
+            if (tablero.dame_celda(i, j).es_vacia())
+            {
+                int n = posibles_valores(i, j);
+                cuantas_celdas[n]++;
+            }
+        }
+    }
 }
